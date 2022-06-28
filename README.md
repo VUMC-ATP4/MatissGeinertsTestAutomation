@@ -1,1 +1,1 @@
-# MatissGeinertsTA
+# Matīss Geinerts Test Automation
