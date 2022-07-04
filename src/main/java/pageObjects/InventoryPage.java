@@ -8,7 +8,7 @@ public class InventoryPage {
 
     public WebDriver driver;
     private By pageTitle = By.cssSelector("div[id='header_container'] span[class='title']");
-    private By linkedInLink = By.linkText("LinkedIn");
+    private By linkedInLink = By.linkText("W3Schools on LinkedIn");
     private By facebook = By.linkText("Facebook");
     private By twitter = By.linkText("Twitter");
     private By copyRightText = By.cssSelector("div[class='footer_copy']");
