@@ -3,7 +3,6 @@ package classroomSix;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pageObjects.classroomSix.Calculator;
 
 public class CalculatorTest {
     Calculator calculator;

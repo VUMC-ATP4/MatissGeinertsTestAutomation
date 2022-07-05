@@ -1,4 +1,4 @@
-package pageObjects.classroomSix;
+package classroomSix;
 
 public class Employee {
     private String firstName;
