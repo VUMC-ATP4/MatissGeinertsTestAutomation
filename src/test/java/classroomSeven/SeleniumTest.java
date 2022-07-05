@@ -91,7 +91,7 @@ public class SeleniumTest {
         InventoryPage inventoryPage = new InventoryPage(driver);
         loginPage.login("standard_user", "secret_sauce");
         Assert.assertEquals(inventoryPage.getPageTitle().getText(), "PRODUCTS");
-        inventoryPage.getLinkedInLink().click();
+//        inventoryPage.getLinkedInLink().click();
         inventoryPage.getFacebookLink().click();
         inventoryPage.getTwitterLink().click();
         Assert.assertEquals(inventoryPage.getCopyRightText().getText(),

@@ -1,4 +1,4 @@
-package classroomSix;
+package pageObjects.classroomSix;
 
 import com.github.javafaker.Faker;
 
