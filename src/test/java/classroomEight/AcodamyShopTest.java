@@ -3,8 +3,12 @@ package classroomEight;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -19,7 +23,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AcodamyShopTest {
     WebDriver driver;
@@ -29,13 +35,17 @@ public class AcodamyShopTest {
     @BeforeMethod
     public void setupBrowser() throws MalformedURLException {
         System.out.println("Pirms");
-//        driver = new ChromeDriver();
-
-        ChromeOptions chromeOptions = new ChromeOptions();
-//     chromeOptions.setCapability("browserVersion", "103");
-        chromeOptions.setCapability("platformName", "Windows");
-        chromeOptions.setCapability("se:name", "My simple test");
-        driver = new RemoteWebDriver(new URL("http://84.237.169.194:4444/"), chromeOptions);
+        ChromeOptions browserOptions = new ChromeOptions();
+        browserOptions.setCapability("platformName", "Windows 10");
+        browserOptions.setCapability("browserVersion", "latest");
+        Map<String, Object> sauceOptions = new HashMap<>();
+        sauceOptions.put("build", "<your build id>");
+        sauceOptions.put("name", "<your test name>");
+        browserOptions.setCapability("sauce:options", sauceOptions);
+        driver = new RemoteWebDriver(new URL("https://oauth-matiss.geinerts-9a78e:aa0b8a6f-417d-4989-944b-bcee4b68995e@ondemand.eu-central-1.saucelabs.com:443/wd/hub"), browserOptions);
+//        driver = new WebDriver(
+//                new URL("https://oauth-matiss.geinerts-9a78e:aa0b8a6f-417d-4989-944b-bcee4b68995e@ondemand.eu-central-1.saucelabs.com:443/wd/hub")
+//        );
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
